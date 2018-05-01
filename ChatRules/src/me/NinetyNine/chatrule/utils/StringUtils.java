@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 
 public class StringUtils {
 
-	public static String prefix = "&8[&1ChatRules&8] &7";
+	public static String prefix = "&8[&aChatRules&8] &7";
 
 	public static String exof = "";
 	public static String prefixe = BLACK + "[" + GREEN + "ChatRules" + BLACK + "]" + DARK_GRAY + " Example of " + exof;

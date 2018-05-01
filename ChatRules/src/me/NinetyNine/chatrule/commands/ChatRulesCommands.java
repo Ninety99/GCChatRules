@@ -198,9 +198,9 @@ public class ChatRulesCommands implements Listener, CommandExecutor {
 						}
 					}
 
-					if (!args[0].equalsIgnoreCase("example") || !args[0].equalsIgnoreCase("1")
-							|| !args[0].equalsIgnoreCase("2") || !args[0].equalsIgnoreCase("3")
-							|| !args[0].equalsIgnoreCase("4")) {
+					if (!args[0].equalsIgnoreCase("example") && !args[0].equalsIgnoreCase("1")
+							&& !args[0].equalsIgnoreCase("2") && !args[0].equalsIgnoreCase("3")
+							&& !args[0].equalsIgnoreCase("4")) {
 						if (args.length == 1) {
 							player.sendMessage(ChatColor.BLACK + "[" + ChatColor.GREEN + "ChatRules" + ChatColor.BLACK
 									+ "]" + ChatColor.RED + " Usage: " + a + "/chatrules 1 " + a + ChatColor.RED
