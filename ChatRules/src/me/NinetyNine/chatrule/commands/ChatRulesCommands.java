@@ -98,12 +98,12 @@ public class ChatRulesCommands implements Listener, CommandExecutor {
 								+ ChatColor.DARK_AQUA + "Alias: " + ChatColor.YELLOW + "/cr" + a + ChatColor.RED
 								+ "Commands: " + a + ChatColor.AQUA + "/chatrules 1" + ChatColor.GOLD + "➣"
 								+ ChatColor.GRAY + " Shows the chat rules (Page 1)" + a + ChatColor.AQUA
-								+ "/chatrules 2" + ChatColor.GOLD + "➣" + ChatColor.GRAY
+								+ "/chatrules 2" + ChatColor.GOLD + ">" + ChatColor.GRAY
 								+ " Shows the chat rules (Page 2)" + a + ChatColor.AQUA + "/chatrules 3"
-								+ ChatColor.GOLD + "➣" + ChatColor.GRAY + " Shows the chat rules (Page 3)" + a
-								+ ChatColor.AQUA + "/chatrules 4" + ChatColor.GOLD + "➣" + ChatColor.GRAY
+								+ ChatColor.GOLD + ">" + ChatColor.GRAY + " Shows the chat rules (Page 3)" + a
+								+ ChatColor.AQUA + "/chatrules 4" + ChatColor.GOLD + ">" + ChatColor.GRAY
 								+ " Shows the chat rules (Page 4)" + a + ChatColor.AQUA + "/chatrules example"
-								+ ChatColor.GOLD + "➣" + ChatColor.GRAY
+								+ ChatColor.GOLD + ">" + ChatColor.GRAY
 								+ " Shows example(s) of a rule type if haven't understood yet." + a + ChatColor.GRAY
 								+ "--------------------" + " [Home page] " + "--------------------");
 						return true;
@@ -367,10 +367,10 @@ public class ChatRulesCommands implements Listener, CommandExecutor {
 			if (cmd.getName().equalsIgnoreCase("gcchatrules")) {
 				if (player.hasPermission("chatrules.admin")) {
 					if (args.length == 0) {
-						StringUtils.sendPlayerMessage(player, "&7--------------------\n" + "&5⊞ &6ChatRules &5⊞\n"
+						player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7--------------------\n" + "&5[] &6ChatRules &5[]\n"
 								+ "&7--------------------\n" + "&9Alias: &b/gccr\n" + "&cCommands:\n"
-								+ "&b/gcchatrules save&6➣ &7Saves the config file after editing something from the config file.\n"
-								+ "&b/gcchatrules setmsg <rule type>&6➣ &7Sets the rule message for a rule. (In development)");
+								+ "&b/gcchatrules save&6> &7Saves the config file after editing something from the config file.\n"
+								+ "&b/gcchatrules setmsg <rule type>&6> &7Sets the rule message for a rule. (In development)"));
 						return true;
 					}
 
