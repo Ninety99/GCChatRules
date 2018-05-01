@@ -41,7 +41,7 @@ public class ChatRulesCommands implements Listener, CommandExecutor {
 		if (sender instanceof Player) {
 			Player player = (Player) sender;
 
-			List<String> rules = new ArrayList<>(Arrays.asList("flood", "spam", "caps", "hackusating", "arguing",
+			List<String> rules = new ArrayList<String>(Arrays.asList("flood", "spam", "caps", "hackusating", "arguing",
 					"chattrolling", "askingstaffforthings", "advertisement", "swearing1", "swearing2", "swearing3",
 					"serverdis", "staffdis", "bypassingfilter", "ddos", "threathack", "inappb"));
 

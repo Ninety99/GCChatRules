@@ -7,8 +7,6 @@ import static org.bukkit.ChatColor.translateAlternateColorCodes;
 
 import org.bukkit.entity.Player;
 
-import me.NinetyNine.chatrule.ChatRules;
-
 public class StringUtils {
 
 	public static String prefix = "&8[&1ChatRules&8] &7";
@@ -26,7 +24,11 @@ public class StringUtils {
 		player.sendMessage(translateAlternateColorCodes('&', prefix + message));
 	}
 
+	//IN DEVELOPMENT
+	
+	/*
 	public static void setRuleMessage(String path, String message) {
 		ChatRules.plugin.getConfig().set(path, message);
 	}
+	*/
 }
