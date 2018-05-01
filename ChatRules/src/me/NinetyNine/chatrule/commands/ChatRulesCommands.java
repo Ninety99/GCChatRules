@@ -378,7 +378,7 @@ public class ChatRulesCommands implements Listener, CommandExecutor {
 						if (args.length == 1) {
 							ChatRules.plugin.saveDefaultConfig();
 							ChatRules.plugin.reloadConfig();
-							StringUtils.sendPlayerMessage(player, "&aSaved!");
+							StringUtils.sendPlayerMessage(player, "&2Saved!");
 							return true;
 						}
 					}
