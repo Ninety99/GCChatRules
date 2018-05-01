@@ -96,7 +96,7 @@ public class ChatRulesCommands implements Listener, CommandExecutor {
 						player.sendMessage(ChatColor.GRAY + "--------------------" + a + ChatColor.DARK_GREEN
 								+ "Welcome to the server!" + a + ChatColor.GRAY + "--------------------" + a
 								+ ChatColor.DARK_AQUA + "Alias: " + ChatColor.YELLOW + "/cr" + a + ChatColor.RED
-								+ "Commands: " + a + ChatColor.AQUA + "/chatrules 1" + ChatColor.GOLD + "➣"
+								+ "Commands: " + a + ChatColor.AQUA + "/chatrules 1" + ChatColor.GOLD + ">"
 								+ ChatColor.GRAY + " Shows the chat rules (Page 1)" + a + ChatColor.AQUA
 								+ "/chatrules 2" + ChatColor.GOLD + ">" + ChatColor.GRAY
 								+ " Shows the chat rules (Page 2)" + a + ChatColor.AQUA + "/chatrules 3"
