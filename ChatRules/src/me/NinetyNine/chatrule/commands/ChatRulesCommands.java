@@ -219,7 +219,7 @@ public class ChatRulesCommands implements Listener, CommandExecutor {
 									+ "flood, spam, caps, hackusating, arguing, chattrolling, askingstaffforthings, advertisement, swearing1, swearing2, swearing3,\n"
 									+ "serverdis, staffdis" + a + "bypassingfilter, ddos, threathack, and inappb" + a
 									+ ChatColor.GRAY + "(Only you can see the example(s), don't worry)" + a
-									+ ChatColor.DARK_RED + ChatColor.BOLD
+									+ ChatColor.RED + ChatColor.BOLD
 									+ "NOTE: The example command will show explicit/not appropriate words. Please do not continue if you don't want to see bad words. Otherwise, continue...");
 							return true;
 						}
