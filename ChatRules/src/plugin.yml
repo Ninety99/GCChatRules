@@ -1,0 +1,16 @@
+name: ChatRules
+main: me.NinetyNine.chatrule.ChatRules
+version: 1.0
+author: NinetyNine
+description: Details about chat rules for GuildCraft!
+commands:
+  chatrules:
+    usage: /<command>
+    aliases: [cr]
+    description: Gives the player chat rules
+    permission: chatrules.chatrules
+  gcchatrules:
+    usage: /<command>
+    aliases: [gccr]
+    description: Do stuff as an admin
+    permission: chatrules.admin
