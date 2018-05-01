@@ -337,7 +337,7 @@ public class ChatRulesCommands implements Listener, CommandExecutor {
 
 					if (args[1].equalsIgnoreCase("threathack")) {
 						if (args.length == 2) {
-							StringUtils.sendExample(player, "threatening to hack someone/the server", examplehack);
+							StringUtils.sendExample(player, "threatening to hack someone", examplehack);
 							return true;
 						}
 					}
