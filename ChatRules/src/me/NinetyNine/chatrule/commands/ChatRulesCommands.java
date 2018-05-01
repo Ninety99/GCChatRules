@@ -386,17 +386,24 @@ public class ChatRulesCommands implements Listener, CommandExecutor {
 					// IN DEVELOPMENT
 
 					/*
-					 * if (args[0].equalsIgnoreCase("setmsg")) { if (args.length == 1) {
-					 * StringUtils.sendPlayerMessage(player,
-					 * "&cUsage: /gcchatrules setmsg <rule type>\n" + "&5Rule types: &6" + rules);
-					 * return true; } rule = args[1]; if
-					 * (ChatRules.plugin.getConfig().contains(args[1]) &&
-					 * args[0].equalsIgnoreCase("setmsg")) { players.add(player);
-					 * StringUtils.sendPlayerMessage(player,
-					 * "&aYou are in &6editing &amode! Please type the message you want to edit.");
-					 * return true; } else { StringUtils.sendPlayerMessage(player,
-					 * "&cInvalid rule//Not implemented."); return true; } }
-					 */
+					if (args[0].equalsIgnoreCase("setmsg")) {
+						if (args.length == 1) {
+							StringUtils.sendPlayerMessage(player,
+									"&cUsage: /gcchatrules setmsg <rule type>\n" + "&5Rule types: &6" + rules);
+							return true;
+						}
+						rule = args[1];
+						if (ChatRules.plugin.getConfig().contains(args[1]) && args[0].equalsIgnoreCase("setmsg")) {
+							players.add(player);
+							StringUtils.sendPlayerMessage(player,
+									"&aYou are in &6editing &amode! Please type the message you want to edit.");
+							return true;
+						} else {
+							StringUtils.sendPlayerMessage(player, "&cInvalid rule//Not implemented.");
+							return true;
+						}
+					}
+					*/
 				} else {
 					StringUtils.sendPlayerMessage(player, "&7You do not have permissions");
 					return true;
