@@ -63,7 +63,8 @@ public class ChatRulesCommands implements Listener, CommandExecutor {
 					+ "player123" + ChatColor.WHITE + " he didn't do anything!" + a + example
 					+ "Please unban him he will never hack again!!";
 			String examplechatt = example + "Press Alt+F4 for gamemode creative!";
-			String examplechattstaff = example + "I'm a " + ChatColor.RED + "Staff" + " and I'm going to ban you!";
+			String examplechattstaff = example + "I'm a " + ChatColor.RED + "Staff" + ChatColor.WHITE
+					+ " and I'm going to ban you!";
 			String exampleaskstaff = example + "Hey! " + ChatColor.RED + "Admin" + ChatColor.WHITE
 					+ " can you give me diamonds please!" + a + example + ChatColor.RED + "Admin" + ChatColor.WHITE
 					+ " I will pay you if you give me the 'item'!";
@@ -367,8 +368,9 @@ public class ChatRulesCommands implements Listener, CommandExecutor {
 			if (cmd.getName().equalsIgnoreCase("gcchatrules")) {
 				if (player.hasPermission("chatrules.admin")) {
 					if (args.length == 0) {
-						player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7--------------------\n" + "&5[] &6ChatRules &5[]\n"
-								+ "&7--------------------\n" + "&9Alias: &b/gccr\n" + "&cCommands:\n"
+						player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7--------------------\n"
+								+ "&5[] &6ChatRules &5[]\n" + "&7--------------------\n" + "&9Alias: &b/gccr\n"
+								+ "&cCommands:\n"
 								+ "&b/gcchatrules save&6> &7Saves the config file after editing something from the config file.\n"
 								+ "&b/gcchatrules setmsg <rule type>&6> &7Sets the rule message for a rule. (In development)"));
 						return true;
@@ -386,24 +388,17 @@ public class ChatRulesCommands implements Listener, CommandExecutor {
 					// IN DEVELOPMENT
 
 					/*
-					if (args[0].equalsIgnoreCase("setmsg")) {
-						if (args.length == 1) {
-							StringUtils.sendPlayerMessage(player,
-									"&cUsage: /gcchatrules setmsg <rule type>\n" + "&5Rule types: &6" + rules);
-							return true;
-						}
-						rule = args[1];
-						if (ChatRules.plugin.getConfig().contains(args[1]) && args[0].equalsIgnoreCase("setmsg")) {
-							players.add(player);
-							StringUtils.sendPlayerMessage(player,
-									"&aYou are in &6editing &amode! Please type the message you want to edit.");
-							return true;
-						} else {
-							StringUtils.sendPlayerMessage(player, "&cInvalid rule//Not implemented.");
-							return true;
-						}
-					}
-					*/
+					 * if (args[0].equalsIgnoreCase("setmsg")) { if (args.length == 1) {
+					 * StringUtils.sendPlayerMessage(player,
+					 * "&cUsage: /gcchatrules setmsg <rule type>\n" + "&5Rule types: &6" + rules);
+					 * return true; } rule = args[1]; if
+					 * (ChatRules.plugin.getConfig().contains(args[1]) &&
+					 * args[0].equalsIgnoreCase("setmsg")) { players.add(player);
+					 * StringUtils.sendPlayerMessage(player,
+					 * "&aYou are in &6editing &amode! Please type the message you want to edit.");
+					 * return true; } else { StringUtils.sendPlayerMessage(player,
+					 * "&cInvalid rule//Not implemented."); return true; } }
+					 */
 				} else {
 					StringUtils.sendPlayerMessage(player, "&7You do not have permissions");
 					return true;
