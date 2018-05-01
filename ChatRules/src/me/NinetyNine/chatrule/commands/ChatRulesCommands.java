@@ -78,13 +78,13 @@ public class ChatRulesCommands implements Listener, CommandExecutor {
 					+ "Burn all the jews!!";
 			String examplestaff = example + "Guys, the staff member " + ChatColor.RED + "(Staff)" + ChatColor.WHITE
 					+ " sucks and is so bad!";
-			String exampleserver = example
-					+ "Guys why do you even play this server, it sucks so hard! This server is so badddd. Shit server";
+			String exampleserver = example + "Guys why do you even play this server, it sucks so hard!" + a + example
+					+ "This server is so badddd. Shit server.";
 			String examplebypass = example + "Come suck on my nuts!" + a + ChatColor.DARK_GRAY + "[" + ChatColor.GRAY
 					+ playername + ChatColor.GOLD + " > " + ChatColor.RED + "me" + ChatColor.DARK_GRAY + "] "
 					+ ChatColor.WHITE + "You are such a prostitute.";
-			String exampleddos = example + "This server is going down, bye bye!" + example
-					+ "I'm gonna ddos this server!" + example
+			String exampleddos = example + "This server is going down, bye bye!" + a + example
+					+ "I'm gonna ddos this server!" + a + example
 					+ "Bye to your internet! You're going to need to buy a new router soon.";
 			String examplehack = example + "I'm going to hack you and your account!";
 			String exampleinapp = example + "B=====D" + a + example + "( . Y . )" + a + example
