@@ -23,18 +23,17 @@ public class ChatRulesCommands implements Listener, CommandExecutor {
 	 * 
 	 * Fixed, removed some commands that aren't needed. 3/23/18.
 	 * 
-	 * Finished. 3/23/18.
-	 * 
 	 * Cleaned up some things, added StringUtils class. Made it tab-able! 3/24/18.
 	 * 
-	 * Added color codes in the config :^) 5/1/2018
+	 * Last edited: 5/10/18
 	 * 
-	 * Last edited: 5/1/18
+	 * FINISHED! #FINALLY 5/10/18
 	 * 
 	 */
 
-	// public static String rule = "";
-	public static List<Player> players = new ArrayList<Player>();
+	public static List<Player> players;
+
+	public static String rule;
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
@@ -349,7 +348,6 @@ public class ChatRulesCommands implements Listener, CommandExecutor {
 						}
 					}
 
-					// for (String ruless : rules) {
 					if (!args[1].equalsIgnoreCase(rules.toString().replace("[", " ").replace("]", " ").trim())) {
 						if (args.length == 2) {
 							player.sendMessage(ChatColor.BLACK + "[" + ChatColor.GREEN + "ChatRules" + ChatColor.BLACK
@@ -358,7 +356,6 @@ public class ChatRulesCommands implements Listener, CommandExecutor {
 							return true;
 						}
 					}
-					// }
 				} else {
 					StringUtils.sendPlayerMessage(player, "&cYou do not have permissions!");
 					return true;
@@ -369,36 +366,61 @@ public class ChatRulesCommands implements Listener, CommandExecutor {
 				if (player.hasPermission("chatrules.admin")) {
 					if (args.length == 0) {
 						player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7--------------------\n"
-								+ "&5[] &6ChatRules &5[]\n" + "&7--------------------\n" + "&9Alias: &b/gccr\n"
+								+ "&5[] &6ChatRules &5[]\n" + "&7--------------------\n" + "&3Alias: &e/gccr\n"
 								+ "&cCommands:\n"
 								+ "&b/gcchatrules save&6> &7Saves the config file after editing something from the config file.\n"
-								+ "&b/gcchatrules setmsg <rule type>&6> &7Sets the rule message for a rule. (In development)"));
+								+ "&b/gcchatrules setmsg <rule type>&6> &7Sets the rule message for a rule.\n"
+								+ "&b/gcchatrules clear <rule type>&6> &7Clears the rule message for a rule"));
+						return true;
+					}
+
+					if (!(args[0].equalsIgnoreCase("save") || args[0].equalsIgnoreCase("setmsg")
+							|| args[0].equalsIgnoreCase("clear"))) {
+						StringUtils.sendPlayerMessage(player, "&cAre you sure you typed that correctly?");
 						return true;
 					}
 
 					if (args[0].equalsIgnoreCase("save")) {
 						if (args.length == 1) {
-							ChatRules.plugin.saveDefaultConfig();
-							ChatRules.plugin.reloadConfig();
-							StringUtils.sendPlayerMessage(player, "&2Saved!");
+							StringUtils.save(player);
 							return true;
 						}
 					}
 
-					// IN DEVELOPMENT
+					if (args[0].equalsIgnoreCase("setmsg")) {
+						if (args.length == 1) {
+							StringUtils.sendPlayerMessage(player, "&cUsage: /gcchatrules setmsg <rule type>\n"
+									+ "&5Rule types: &6" + rules.toString().replace("[", " ").replace("]", " ").trim());
+							return true;
+						}
+						rule = args[1];
+						if (ChatRules.plugin.getConfig().contains(args[1]) && args[0].equalsIgnoreCase("setmsg")) {
+							players.add(player);
+							StringUtils.sendPlayerMessage(player,
+									"&2You are in &6editing &2mode! Please type the rule message to change the current rule message.");
+							return true;
+						} else {
+							StringUtils.sendPlayerMessage(player, "&cInvalid rule//not implemented.");
+							return true;
+						}
+					}
 
-					/*
-					 * if (args[0].equalsIgnoreCase("setmsg")) { if (args.length == 1) {
-					 * StringUtils.sendPlayerMessage(player,
-					 * "&cUsage: /gcchatrules setmsg <rule type>\n" + "&5Rule types: &6" + rules);
-					 * return true; } rule = args[1]; if
-					 * (ChatRules.plugin.getConfig().contains(args[1]) &&
-					 * args[0].equalsIgnoreCase("setmsg")) { players.add(player);
-					 * StringUtils.sendPlayerMessage(player,
-					 * "&aYou are in &6editing &amode! Please type the message you want to edit.");
-					 * return true; } else { StringUtils.sendPlayerMessage(player,
-					 * "&cInvalid rule//Not implemented."); return true; } }
-					 */
+					if (args[0].equalsIgnoreCase("clear")) {
+						if (args.length == 1) {
+							StringUtils.sendPlayerMessage(player, "&cUsage: /gcchatrules clear <rule type>\n"
+									+ "&5Rule types: &6" + rules.toString().replace("[", " ").replace("]", " ").trim());
+							return true;
+						}
+						rule = args[1];
+						if (ChatRules.plugin.getConfig().contains(args[1]) && args[0].equalsIgnoreCase("clear")) {
+							StringUtils.setRuleMessage("");
+							StringUtils.sendPlayerMessage(player, "Cleared!");
+							return true;
+						} else {
+							StringUtils.sendPlayerMessage(player, "&cInvalid rule//not implemented.");
+							return true;
+						}
+					}
 				} else {
 					StringUtils.sendPlayerMessage(player, "&7You do not have permissions");
 					return true;

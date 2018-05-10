@@ -1,19 +1,20 @@
 package me.NinetyNine.chatrule.utils;
 
-import static org.bukkit.ChatColor.BLACK;
-import static org.bukkit.ChatColor.DARK_GRAY;
-import static org.bukkit.ChatColor.GREEN;
 import static org.bukkit.ChatColor.translateAlternateColorCodes;
 
 import org.bukkit.entity.Player;
+import org.bukkit.event.Listener;
 
-public class StringUtils {
+import me.NinetyNine.chatrule.ChatRules;
+import me.NinetyNine.chatrule.commands.ChatRulesCommands;
 
-	public static String prefix = "&8[&aChatRules&8] &7";
+public class StringUtils implements Listener {
 
-	public static String exof = "";
-	public static String prefixe = BLACK + "[" + GREEN + "ChatRules" + BLACK + "]" + DARK_GRAY + " Example of " + exof;
-	public static String colon = ":" + "\n";
+	public static String prefix;
+
+	public static String exof;
+	public static String prefixe;
+	public static String colon;
 
 	public static void sendExample(Player player, String exampleof, String string) {
 		exof = exampleof;
@@ -23,12 +24,17 @@ public class StringUtils {
 	public static void sendPlayerMessage(Player player, String message) {
 		player.sendMessage(translateAlternateColorCodes('&', prefix + message));
 	}
-
-	//IN DEVELOPMENT
 	
-	/*
-	public static void setRuleMessage(String path, String message) {
+	public static void setRuleMessage(String message) {
+		String path = ChatRulesCommands.rule;
 		ChatRules.plugin.getConfig().set(path, message);
+		ChatRules.plugin.saveConfig();
+		ChatRules.plugin.reloadConfig();
 	}
-	*/
+	
+	public static void save(Player player) {
+		ChatRules.plugin.saveConfig();
+		ChatRules.plugin.reloadConfig();
+		sendPlayerMessage(player, "&2Saved!");
+	}
 }
