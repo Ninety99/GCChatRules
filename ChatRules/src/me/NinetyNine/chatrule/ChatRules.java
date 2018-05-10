@@ -26,6 +26,7 @@ public class ChatRules extends JavaPlugin {
 		registerListeners();
 
 		ChatRulesCommands.players = new ArrayList<Player>();
+		
 		ChatRulesCommands.rule = "";
 		StringUtils.prefix = "&8[&aChatRules&8] &7";
 		StringUtils.exof = "";

@@ -11,7 +11,6 @@ import me.NinetyNine.chatrule.commands.ChatRulesCommands;
 public class StringUtils implements Listener {
 
 	public static String prefix;
-
 	public static String exof;
 	public static String prefixe;
 	public static String colon;

@@ -21,7 +21,6 @@ public class ChatRulesHandler implements Listener {
 			StringUtils.sendPlayerMessage(player, "&aSuccesfully set message to &r'" + message
 					+ "&r'&a!");
 			ChatRulesCommands.players.remove(player);
-			return;
 		}
 	}
 }

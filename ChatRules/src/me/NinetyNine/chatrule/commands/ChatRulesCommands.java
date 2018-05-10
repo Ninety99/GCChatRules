@@ -28,7 +28,6 @@ public class ChatRulesCommands implements Listener, CommandExecutor {
 	 * Last edited: 5/10/18
 	 * 
 	 * FINISHED! #FINALLY 5/10/18
-	 * 
 	 */
 
 	public static List<Player> players;
